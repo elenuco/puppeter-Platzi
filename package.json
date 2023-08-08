@@ -1,0 +1,19 @@
+{
+  "name": "puppeter-platzi",
+  "version": "1.0.0",
+  "description": "proyecto Guiado para el uso de pupeter como herramienta de automatizacion de peuebas",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --forceExit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.6.2",
+    "puppeteer": "^21.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.1"
+  }
+}
