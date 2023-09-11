@@ -27,7 +27,7 @@ describe('Emulando dispositivos', () => {
   });
 
   it('Emulando dispositivos de forma manual', async () => {
-    await puppeteer.emulate({
+    await page.emulate({
         name:'Mi Dispositivo',
         viewport:{
             with: 375,
@@ -42,6 +42,11 @@ describe('Emulando dispositivos', () => {
     await page.waitforTimeOut(3000)
   }, 350000);
 
-
- 
+  it('Emulando sitio de escritorio', async () => {
+    await page.setViewport({
+        with:1280,
+        height: 800,
+    })
+    await page.waitforTimeOut(3000)
+  }, 350000); 
 });
