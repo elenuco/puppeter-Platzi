@@ -4,7 +4,8 @@
   "description": "proyecto Guiado para el uso de pupeter como herramienta de automatizacion de peuebas",
   "main": "index.js",
   "scripts": {
-    "test": "jest --forceExit"
+    "test": "jest --forceExit --detectOpenHandles",
+    "test-emulacion-de-dispositivos":"jest --forceExit --detectOpenHandles __test__/emulacionDeDispositivos.test.js"
   },
   "keywords": [],
   "author": "",
