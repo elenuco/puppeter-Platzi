@@ -41,12 +41,37 @@ describe('Emulando dispositivos', () => {
     })
     await page.waitforTimeOut(3000)
   }, 350000);
-
+//Emulando un sitio de escritorio
   it('Emulando sitio de escritorio', async () => {
     await page.setViewport({
-        with:1280,
+        with:1500,
         height: 800,
     })
     await page.waitforTimeOut(3000)
   }, 350000); 
-});
+  //Emulando una tablet
+  it('Emulando una tablet', async () => {
+    const tablet= puppeteer.devices['ipad Pro']
+    await page.emulate(tablet)
+    await page.waitforTimeOut(3000)
+    })
+    //Emulando una tablet con landscape
+  it('Emulando una tablet con lanscape', async () => {
+    const tablet= puppeteer.devices['iPad landscape']
+    await page.emulate(tablet)
+    await page.waitforTimeOut(3000)
+    })
+    //Emulando un sitio en un telefono movil
+    it('Emulando una tablet con lanscape', async () => {
+        const iphone= puppeteer.devices['iPhone x']
+        await page.emulate(iphone)
+        await page.waitforTimeOut(3000)
+        })
+    //Una forma mas actualizada
+    import { KnownDevices } from 'puppeteer'
+
+const tablet = KnownDevices['iPad Pro']
+
+await page.emulate(tablet)
+  }); 
+  
