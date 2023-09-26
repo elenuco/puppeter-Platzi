@@ -4,19 +4,20 @@ describe('Emulando dispositivos', () => {
   let browser;
   let page;
 
-  beforeAll(async () => {
+  beforeEach(async () => {
     browser = await puppeteer.launch({
       headless: false,
       defaultViewport: null
     });
   });
 
-  afterAll(async () => {
+  afterEach(async () => {
     await browser.close();
   });
 
   beforeEach(async () => {
-    page = await browser.newPage();
+    const context= await browser.createIncognitoBrowserContext().newPage();
+    page = await context.newPage()
     await page.goto('https://platzi.com/', {
       waitUntil: 'networkidle2',
     });
@@ -26,7 +27,7 @@ describe('Emulando dispositivos', () => {
     page = '';
   });
 
-  it('Emulando dispositivos de forma manual', async () => {
+  test('Emulando dispositivos de forma manual', async () => {
     await page.emulate({
         name:'Mi Dispositivo',
         viewport:{
